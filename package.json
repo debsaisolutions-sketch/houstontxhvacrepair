@@ -1,0 +1,8 @@
+{
+  "name": "houstontxhvacrepair",
+  "private": true,
+  "description": "Houston TX HVAC Repair static lead site",
+  "dependencies": {
+    "retell-client-js-sdk": "^2.0.8"
+  }
+}
