@@ -66,9 +66,8 @@ a {
   text-decoration: none;
 }
 
-.sticky-call .phone-placeholder {
-  opacity: 0.95;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.7);
+.sticky-call a:hover {
+  text-decoration: underline;
 }
 
 /* Site nav — main pages only (suburb pages intentionally excluded) */
@@ -116,6 +115,24 @@ a {
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
   color: var(--amber);
+}
+
+.nav-call {
+  display: inline-block;
+  background: var(--amber);
+  color: var(--white) !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.nav-call:hover {
+  background: var(--amber-hover);
+  color: var(--white) !important;
 }
 
 /* Hero / page header */
