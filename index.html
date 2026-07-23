@@ -83,6 +83,7 @@
   </script>
   <!-- Retell Website Chat Widget (shared injector — docs.retellai.com/deploy/chat-widget) -->
   <script src="/js/retell-chat-widget.js" defer></script>
+  <script src="/js/leads.js" defer></script>
   <meta name="google-site-verification" content="xyYZIHXOrNY0RxwK1Varzu-1wcn9BTpMAdAMWJjufjk" />
 </head>
 <body>
@@ -97,6 +98,7 @@
         <li><a href="/" aria-current="page">Home</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/new-system-sales-installation/">New Systems</a></li>
+        <li><a href="/ac-health-check/">AC Health Check</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a class="nav-call" href="tel:+13466556999">Call (346) 655-6999</a></li>
       </ul>
@@ -113,11 +115,17 @@
         <a href="tel:+13466556999" class="cta-button">Call Now</a>
         <a href="/contact/" class="cta-button secondary">Get Free Estimate</a>
         <a href="/new-system-sales-installation/" class="cta-button secondary">New System Sales</a>
+        <a href="/ac-health-check/" class="cta-button secondary">AC Health Check</a>
       </div>
     </div>
   </header>
 
   <main class="container">
+    <aside class="quiz-banner" aria-label="AC Health Check">
+      <p>Not sure if you need service? Take our 60-second AC Health Check</p>
+      <a class="cta-button" href="/ac-health-check/">Start Free Check →</a>
+    </aside>
+
     <section>
       <h2>Professional HVAC Service Across Greater Houston</h2>
       <p>Houston’s humid subtropical climate runs cooling systems hard for most of the year. Morning humidity along the Gulf Coast, long stretches above 90°F, and sudden cold snaps mean your AC and heat need to be sized and serviced for local conditions—not just generic “Texas heat.”</p>
@@ -210,7 +218,7 @@
     <section id="estimate">
       <h2>Get Your Free HVAC Estimate</h2>
       <p style="text-align:center;margin-bottom:8px;">Tell us what’s going on—we’ll follow up during business hours. Urgent cooling failures: leave a phone number so we can prioritize you.</p>
-      <form class="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="lead-form" method="POST">
         <label for="name">Name</label>
         <input id="name" type="text" name="name" placeholder="Your name" required />
         <label for="email">Email</label>
@@ -221,6 +229,7 @@
         <textarea id="message" name="message" rows="5" placeholder="Describe your HVAC issue or install interest..." required></textarea>
         <button type="submit">Request Free Estimate</button>
       </form>
+      <p id="form-success" class="form-success" role="status"></p>
     </section>
   </main>
 
@@ -238,6 +247,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/services/">Services</a></li>
             <li><a href="/new-system-sales-installation/">New System Sales &amp; Installation</a></li>
+            <li><a href="/ac-health-check/">AC Health Check</a></li>
             <li><a href="/contact/">Contact</a></li>
           </ul>
         </div>

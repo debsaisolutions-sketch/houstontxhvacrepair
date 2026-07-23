@@ -26,6 +26,7 @@
   }
   </script>
   <script src="/js/retell-chat-widget.js" defer></script>
+  <script src="/js/leads.js" defer></script>
 </head>
 <body>
   <div class="sticky-call">
@@ -39,6 +40,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/new-system-sales-installation/">New Systems</a></li>
+        <li><a href="/ac-health-check/">AC Health Check</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a class="nav-call" href="tel:+13466556999">Call (346) 655-6999</a></li>
       </ul>
@@ -60,6 +62,11 @@
   <main class="container">
     <section>
       <p class="breadcrumb"><a href="/">Home</a> / The Woodlands HVAC Repair</p>
+      <script>try{sessionStorage.setItem('hvac_lead_city',"The Woodlands");}catch(e){}</script>
+      <aside class="quiz-banner" aria-label="AC Health Check">
+        <p>Not sure if you need service? Take our 60-second AC Health Check</p>
+        <a class="cta-button" href="/ac-health-check/?lead_city=The%20Woodlands&city=The%20Woodlands">Start Free Check →</a>
+      </aside>
       <div class="local-grid">
         <div>
           <h2>Forest Canopy and Corporate Commute Reality</h2>
@@ -118,6 +125,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/services/">Services</a></li>
             <li><a href="/new-system-sales-installation/">New System Sales &amp; Installation</a></li>
+            <li><a href="/ac-health-check/">AC Health Check</a></li>
             <li><a href="/contact/">Contact</a></li>
           </ul>
         </div>

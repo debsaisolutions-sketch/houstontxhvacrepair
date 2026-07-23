@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/css/styles.css" />
   <!-- Retell Website Chat Widget -->
   <script src="/js/retell-chat-widget.js" defer></script>
+  <script src="/js/leads.js" defer></script>
 </head>
 <body>
   <div class="sticky-call">
@@ -53,7 +54,7 @@
         <div>
           <h2>Send a Message</h2>
           <p>Include your neighborhood (Klein, Jersey Village, Spring, etc.), system brand if you know it, and whether you need emergency cooling help or a planned install quote.</p>
-          <form class="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-left:0;">
+          <form class="lead-form" id="lead-form" method="POST" style="margin-left:0;">
             <label for="name">Name</label>
             <input id="name" type="text" name="name" required />
             <label for="email">Email</label>
@@ -66,12 +67,22 @@
               <option>Klein</option>
               <option>Jersey Village</option>
               <option>Spring</option>
+              <option>Tomball</option>
+              <option>Cypress</option>
+              <option>The Woodlands</option>
+              <option>Humble</option>
+              <option>Magnolia</option>
               <option>Other Greater Houston</option>
             </select>
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
+            <input type="hidden" name="landing_page" id="landing_page" value="" />
+            <input type="hidden" name="lead_source" id="lead_source" value="" />
+            <input type="hidden" name="risk_level" id="risk_level" value="" />
+            <input type="hidden" name="lead_city" id="lead_city" value="" />
             <button type="submit">Request Free Estimate</button>
           </form>
+          <p id="form-success" class="form-success" role="status"></p>
         </div>
         <aside class="aside-box">
           <h3>Hours &amp; Contact</h3>
@@ -101,6 +112,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/services/">Services</a></li>
             <li><a href="/new-system-sales-installation/">New System Sales &amp; Installation</a></li>
+            <li><a href="/ac-health-check/">AC Health Check</a></li>
             <li><a href="/contact/">Contact</a></li>
           </ul>
         </div>
