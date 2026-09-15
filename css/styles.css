@@ -1,18 +1,26 @@
-/* Houston TX HVAC Repair — visual system adapted from Hill Country HVAC Repair
-   Navy + amber heat theme, Oswald headlines, Source Sans 3 body */
+/* Houston TX HVAC Repair — Love Air Conditioning Company brand
+   Tokens taken from live loveair.net (WP/Beaver Builder) + official logo PNG.
+   Primary navy #00014d (--wp--preset--color--fl-heading-text, section fills)
+   Accent/CTA pink #f04999 (--fl-accent-hover; 24-HOUR / CALL / SCHEDULE SERVICE)
+   Hover pink #ca296a (loveair.net layout CSS)
+   Cyan #24d7ff (logo outline + layout CSS)
+   Body bg #f2f2f2 (--fl-body-bg) · text #212529 (--fl-body-text)
+   Header white like loveair.net. --amber kept as the pink token so existing rules map. */
 
 :root {
-  --navy: #1a3a52;
-  --navy-mid: #2d5a7b;
-  --amber: #f59e0b;
-  --amber-hover: #d97706;
-  --text: #333;
-  --bg: #f5f5f5;
+  --navy: #00014d;
+  --navy-mid: #001a6e;
+  --amber: #f04999;
+  --amber-hover: #ca296a;
+  --cyan: #24d7ff;
+  --text: #212529;
+  --bg: #f2f2f2;
   --white: #fff;
-  --muted: #f9fafb;
-  --sky: #f0f9ff;
-  --border: #ddd;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --muted: #f0f0f0;
+  --sky: #fff5fa;
+  --border: #e6e6e6;
+  --shadow: 0 2px 8px rgba(0, 1, 77, 0.12);
+  --cta-on-pink: #00014d;
 }
 
 * {
@@ -39,7 +47,11 @@ img {
 }
 
 a {
-  color: var(--amber);
+  color: var(--navy);
+}
+
+a:hover {
+  color: var(--amber-hover);
 }
 
 .container {
@@ -48,12 +60,12 @@ a {
   padding: 0 20px;
 }
 
-/* Sticky call bar */
+/* Sticky call bar — pink fill + navy type (Love Air CTA pink; ~5.9:1 contrast) */
 .sticky-call {
   position: sticky;
   top: 0;
   background: var(--amber);
-  color: var(--white);
+  color: var(--cta-on-pink);
   padding: 12px 16px;
   text-align: center;
   font-weight: 700;
@@ -62,7 +74,7 @@ a {
 }
 
 .sticky-call a {
-  color: var(--white);
+  color: var(--cta-on-pink);
   text-decoration: none;
 }
 
@@ -70,10 +82,10 @@ a {
   text-decoration: underline;
 }
 
-/* Site nav — main pages only (suburb pages intentionally excluded) */
+/* Site nav — white header like loveair.net */
 .site-nav {
-  background: var(--navy);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
 .site-nav .nav-inner {
@@ -81,21 +93,39 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 0;
+  padding: 10px 0;
   flex-wrap: wrap;
 }
 
 .site-nav .brand {
-  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--navy);
   text-decoration: none;
   font-family: "Oswald", sans-serif;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   letter-spacing: 0.02em;
+}
+
+.site-nav .brand-logo {
+  height: 52px;
+  width: auto;
+  max-width: 200px;
+}
+
+.site-nav .brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
 }
 
 .site-nav .brand span {
   color: var(--amber);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -103,10 +133,11 @@ a {
   flex-wrap: wrap;
   gap: 6px 18px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--navy);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -114,20 +145,20 @@ a {
 
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
-  color: var(--amber);
+  color: var(--amber-hover);
 }
 
 .nav-call {
   display: inline-block;
   background: var(--amber);
-  color: var(--white) !important;
+  color: var(--cta-on-pink) !important;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 8px 14px;
   border-radius: 4px;
   white-space: nowrap;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .nav-call:hover {
@@ -136,7 +167,7 @@ a {
 }
 
 .loveair-band {
-  background: #0f2740;
+  background: var(--navy);
   color: rgba(255, 255, 255, 0.92);
   text-align: center;
   padding: 10px 16px;
@@ -144,7 +175,7 @@ a {
 }
 
 .loveair-band a {
-  color: var(--amber);
+  color: var(--cyan);
   font-weight: 700;
 }
 
@@ -181,16 +212,23 @@ a {
   font-weight: 600;
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid #dbeafe;
+  border: 1px solid #f5c5dc;
 }
 
 .related-pills a:hover {
   background: var(--amber);
-  color: #fff;
+  color: var(--cta-on-pink);
   border-color: var(--amber);
 }
 
 @media (max-width: 720px) {
+  .site-nav .brand-logo {
+    height: 44px;
+    max-width: 160px;
+  }
+  .site-nav .brand-text {
+    display: none;
+  }
   .sticky-call {
     position: sticky;
     bottom: auto;
@@ -204,10 +242,10 @@ a {
     background: var(--amber);
     padding: 12px 16px 14px;
     text-align: center;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -4px 16px rgba(0, 1, 77, 0.18);
   }
   .mobile-call-bar a {
-    color: #fff;
+    color: var(--cta-on-pink);
     font-weight: 800;
     text-decoration: none;
     font-size: 1.05rem;
@@ -230,10 +268,10 @@ a {
 /* Hero / page header */
 .page-hero {
   background:
-    linear-gradient(135deg, rgba(26, 58, 82, 0.92) 0%, rgba(45, 90, 123, 0.88) 55%, rgba(26, 58, 82, 0.9) 100%),
-    radial-gradient(ellipse at 20% 20%, rgba(245, 158, 11, 0.18), transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(45, 90, 123, 0.5), transparent 45%),
-    linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+    linear-gradient(135deg, rgba(0, 1, 77, 0.94) 0%, rgba(0, 26, 110, 0.9) 55%, rgba(0, 1, 77, 0.92) 100%),
+    radial-gradient(ellipse at 20% 20%, rgba(240, 73, 153, 0.22), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(36, 215, 255, 0.18), transparent 45%),
+    linear-gradient(135deg, #00014d 0%, #001a6e 100%);
   color: var(--white);
   padding: 56px 0 64px;
   text-align: center;
@@ -298,17 +336,18 @@ a {
 .cta-button {
   display: inline-block;
   background: var(--amber);
-  color: var(--white);
+  color: var(--cta-on-pink);
   padding: 14px 36px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 700;
   margin-top: 18px;
-  transition: background 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .cta-button:hover {
   background: var(--amber-hover);
+  color: var(--white);
   transform: translateY(-1px);
 }
 
@@ -466,7 +505,7 @@ form.lead-form select {
 
 form.lead-form button {
   background: var(--amber);
-  color: var(--white);
+  color: var(--cta-on-pink);
   padding: 14px 28px;
   border: none;
   border-radius: 4px;
@@ -475,11 +514,12 @@ form.lead-form button {
   width: 100%;
   font-size: 1rem;
   margin-top: 6px;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 form.lead-form button:hover {
   background: var(--amber-hover);
+  color: var(--white);
 }
 
 /* Local / suburb content */
@@ -820,4 +860,39 @@ form.lead-form button:hover {
 
 .quiz-text-btn:hover {
   color: var(--amber-hover);
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin: 8px 0 48px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  font-family: "Oswald", sans-serif;
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.card p {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--amber);
 }

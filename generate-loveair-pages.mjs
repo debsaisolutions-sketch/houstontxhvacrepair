@@ -25,8 +25,11 @@ const REGION = 'TX'
 const ZIP = '77014'
 const TODAY = '2026-09-15'
 
-const ICON =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F59E0B' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z'/%3E%3C/svg%3E"
+const ICON = '/img/love-air-favicon.png'
+const BRAND_NAV = `<a class="brand" href="/" aria-label="Love Air Conditioning Company — Houston HVAC">
+        <img class="brand-logo" src="/img/love-air-logo.png" alt="Love Air Conditioning Company" width="200" height="109" />
+        <span class="brand-text">Love Air <span>Houston HVAC</span></span>
+      </a>`
 
 function nav(current) {
   const items = [
@@ -46,7 +49,7 @@ function nav(current) {
     .join('\n')
   return `  <nav class="site-nav" aria-label="Main">
     <div class="container nav-inner">
-      <a class="brand" href="/">Houston <span>TX HVAC</span> Repair</a>
+      ${BRAND_NAV}
       <ul class="nav-links">
 ${links}
         <li><a class="nav-call" href="tel:${TEL}">Call ${PHONE}</a></li>
@@ -224,7 +227,8 @@ function wrap({ canonical, title, desc, current, h1, lede, schema, main, extraCt
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="${ICON}" />
+  <link rel="icon" type="image/png" href="${ICON}" />
+  <link rel="apple-touch-icon" href="${ICON}" />
   <link rel="stylesheet" href="/css/styles.css" />
   <script type="application/ld+json">
   ${schema}

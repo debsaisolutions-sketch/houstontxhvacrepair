@@ -15,14 +15,20 @@
   s.type = "module";
   s.setAttribute("data-public-key", "public_key_63669e34a0a616e92b6f7");
   s.setAttribute("data-agent-id", "agent_e04488b904c425ae584e7c9eda");
-  s.setAttribute("data-bot-name", "Houston HVAC Assistant");
-  s.setAttribute("data-title", "Chat with Houston TX HVAC");
-  s.setAttribute("data-fab-text", "Chat with us");
-  s.setAttribute("data-popup-message", "Hi! Need AC or heating help in Greater Houston? Type a message anytime.");
+  // Customer-facing Love Air chrome only. Do not change public key or agent id
+  // (routing into Joe / Love Air's TDP account).
+  s.setAttribute("data-bot-name", "Love Air Assistant");
+  s.setAttribute("data-title", "Love Air");
+  s.setAttribute("data-fab-text", "Chat with Love Air");
+  s.setAttribute(
+    "data-popup-message",
+    "Hi, I'm the Love Air assistant. How can we help with your heating or air conditioning today?"
+  );
   s.setAttribute("data-show-ai-popup", "true");
   s.setAttribute("data-show-ai-popup-time", "4");
   s.setAttribute("data-auto-open", "false");
-  s.setAttribute("data-theme-color", "#1a3a52");
-  s.setAttribute("data-component-color", "#f59e0b");
+  s.setAttribute("data-theme-color", "#00014d");
+  s.setAttribute("data-component-color", "#f04999");
+  s.setAttribute("data-logo-url", "https://houstontxhvacrepair.com/img/love-air-logo.png");
   document.head.appendChild(s);
 })();
