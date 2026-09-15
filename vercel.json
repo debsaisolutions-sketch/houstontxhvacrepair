@@ -3,9 +3,15 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "www.houstontxhvacrepair.com" }],
-      "destination": "https://houstontxhvacrepair.com/:path*",
+      "destination": "https://houstontxhvacrepair.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "www.houstontxhvacrepair.com" }],
+      "destination": "https://houstontxhvacrepair.com/:path",
       "permanent": true
     }
   ]
