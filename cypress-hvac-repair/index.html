@@ -22,7 +22,7 @@
     "name": "Cypress HVAC Repair",
     "url": "https://houstontxhvacrepair.com/cypress-hvac-repair/",
     "areaServed": { "@type": "Place", "name": "Cypress, Texas" },
-    "provider": { "@type": "HVACBusiness", "name": "Houston TX HVAC Repair", "url": "https://houstontxhvacrepair.com" }
+    "provider": { "@type": "HVACBusiness", "name": "Love Air Conditioning Company", "alternateName": "Houston TX HVAC Repair", "url": "https://houstontxhvacrepair.com" }
   }
   </script>
   <script src="/js/retell-chat-widget.js" defer></script>
@@ -32,6 +32,10 @@
   <div class="sticky-call">
     Call Now: <a href="tel:+13466556999">(346) 655-6999</a> | 24/7 Emergency Service
   </div>
+  <div class="loveair-band">
+    Work is fulfilled by <strong>Love Air Conditioning Company</strong> — Houston HVAC from 14420 West Sylvanfield Dr, Houston, TX 77014.
+    <a href="/about/">About Love Air</a>
+  </div>
 
   <nav class="site-nav" aria-label="Main">
     <div class="container nav-inner">
@@ -39,8 +43,10 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/services/">Services</a></li>
-        <li><a href="/new-system-sales-installation/">New Systems</a></li>
-        <li><a href="/ac-health-check/">AC Health Check</a></li>
+        <li><a href="/ac-repair-houston/">AC Repair</a></li>
+        <li><a href="/heating-repair-houston/">Heating</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
         <li><a href="/contact/">Contact</a></li>
         <li><a class="nav-call" href="tel:+13466556999">Call (346) 655-6999</a></li>
       </ul>
@@ -112,12 +118,37 @@
     </section>
   </main>
 
+      <section class="convert-panel" id="request-service">
+      <h2>Request Houston HVAC service</h2>
+      <p>Call, send the form, or use chat. Dispatch is Love Air — 24/7 emergency service, office hours Mon–Sat 8am–8pm and Sun 9am–4pm.</p>
+      <div class="cta-row" style="margin-bottom:16px;">
+        <a href="tel:+13466556999" class="cta-button">Call (346) 655-6999</a>
+        <a href="/contact/" class="cta-button secondary">Open contact form</a>
+        <a href="/ac-health-check/" class="cta-button secondary">AC Health Check</a>
+      </div>
+      <form class="lead-form" method="POST">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required />
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" required />
+        <label for="message">What's going on?</label>
+        <textarea id="message" name="message" rows="4" required placeholder="AC not cooling, no heat, replacement quote…"></textarea>
+        <input type="hidden" name="lead_city" value="Cypress" />
+        <input type="hidden" name="landing_page" value="cypress-hvac-repair" />
+        <input type="hidden" name="lead_source" value="form" />
+        <button type="submit">Request service</button>
+      </form>
+      <p id="form-success" class="form-success" role="status"></p>
+    </section>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3>Houston TX HVAC Repair</h3>
-          <p>HVAC repair and installation for Cypress and Greater Houston.</p>
+          <h3>Love Air Conditioning Company</h3>
+          <p>Fulfillment for Houston TX HVAC Repair. 14420 West Sylvanfield Dr, Houston, TX 77014.</p>
+          <p style="margin-top:10px;">24/7 emergency service · Office Mon–Sat 8am–8pm, Sun 9am–4pm</p>
         </div>
         <div>
           <h3>Quick Links</h3>
@@ -150,5 +181,8 @@
       </div>
     </div>
   </footer>
+  <div class="mobile-call-bar" aria-label="Call Love Air">
+    <a href="tel:+13466556999">Call (346) 655-6999 · 24/7 emergency</a>
+  </div>
 </body>
 </html>

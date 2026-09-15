@@ -42,6 +42,7 @@
     if (parts.landing_page) lines.push('landing_page=' + parts.landing_page);
     if (parts.lead_city) lines.push('lead_city=' + parts.lead_city);
     if (parts.lead_source) lines.push('lead_source=' + parts.lead_source);
+    if (parts.channel) lines.push('channel=' + parts.channel);
     if (parts.risk_level) lines.push('risk_level=' + parts.risk_level);
     if (parts.area) lines.push('Area: ' + parts.area);
     if (parts.message) lines.push(parts.message);
@@ -51,6 +52,14 @@
   async function submitLead(payload) {
     var leadCity = payload.lead_city || getLeadCity();
     var landingPage = payload.landing_page || qs('landing_page') || '';
+    if (!landingPage) {
+      try {
+        var p = (location.pathname || '/').replace(/\/+$/, '');
+        landingPage = !p || p === '/' ? 'homepage' : p.replace(/^\//, '');
+      } catch (e) {
+        landingPage = 'website';
+      }
+    }
     var leadSource = payload.lead_source || qs('lead_source') || '';
     var riskLevel = payload.risk_level || qs('risk_level') || '';
     var area = payload.area || '';
@@ -67,7 +76,8 @@
       message: buildMessage({
         landing_page: landingPage || (source === 'AC Health Check' ? 'ac-health-check' : 'website'),
         lead_city: leadCity || area || 'Houston',
-        lead_source: leadSource || (source === 'AC Health Check' ? 'ac_health_check' : 'contact_form'),
+        lead_source: leadSource || (source === 'AC Health Check' ? 'ac_health_check' : 'form'),
+        channel: 'form',
         risk_level: riskLevel,
         area: area,
         message: payload.message || '',
@@ -101,6 +111,15 @@
     var riskLevel = qs('risk_level');
     var leadSource = qs('lead_source');
     var landingPage = qs('landing_page');
+    if (!landingPage) {
+      try {
+        var path = (location.pathname || '/').replace(/\/+$/, '');
+        landingPage = !path || path === '/' ? 'homepage' : path.replace(/^\//, '');
+      } catch (e) {
+        landingPage = 'website';
+      }
+    }
+    if (!leadSource) leadSource = 'form';
 
     function ensureHidden(name, value) {
       if (!value) return;
