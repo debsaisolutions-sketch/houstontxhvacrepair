@@ -38,7 +38,7 @@ function nav(current) {
     ['/ac-repair-houston/', 'AC Repair'],
     ['/heating-repair-houston/', 'Heating'],
     ['/about/', 'About'],
-    ['/blog/index.html', 'Blog'],
+    ['/blog/', 'Blog'],
     ['/contact/', 'Contact'],
   ]
   const links = items
@@ -856,7 +856,7 @@ function patchBlogs() {
     html = html.replace(
       /<p>© \d+ houstontxhvacrepair\.com<\/p>\s*<p><a href="\/">Home<\/a> · <a href="\/blog\/index.html">Blog<\/a><\/p>/,
       `<p>© 2026 Love Air Conditioning Company · Houston TX HVAC Repair</p>
-    <p><a href="/">Home</a> · <a href="/blog/index.html">Blog</a> · <a href="tel:${TEL}">${PHONE}</a> · ${STREET}, ${ZIP}</p>`
+    <p><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="tel:${TEL}">${PHONE}</a> · ${STREET}, ${ZIP}</p>`
     )
     if (!html.includes('retell-chat-widget.js')) {
       html = html.replace(
@@ -900,7 +900,7 @@ function writeSitemap() {
     ['https://houstontxhvacrepair.com/humble-heating-repair/', '0.75'],
     ['https://houstontxhvacrepair.com/magnolia-hvac-repair/', '0.7'],
     ['https://houstontxhvacrepair.com/magnolia-furnace-repair/', '0.75'],
-    ['https://houstontxhvacrepair.com/blog/index.html', '0.6'],
+    ['https://houstontxhvacrepair.com/blog/', '0.6'],
   ]
   const blogDir = path.join(ROOT, 'blog')
   for (const f of fs.readdirSync(blogDir).filter((x) => x.endsWith('.html') && x !== 'index.html')) {
