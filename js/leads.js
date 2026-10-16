@@ -1,3 +1,5 @@
+/* TradeDeskPro first-touch/UTM capture */
+(function(){if(typeof document==='undefined')return;var s=document.createElement('script');s.src='https://www.tradedeskpro.com/js/tdp-lead-attribution.js';s.defer=true;(document.head||document.documentElement).appendChild(s)})();
 /**
  * Shared lead intake for Houston TX HVAC Repair → TradeDeskPro /api/leads
  * Encodes landing_page, lead_city, lead_source, risk_level into message for inbox tagging.
